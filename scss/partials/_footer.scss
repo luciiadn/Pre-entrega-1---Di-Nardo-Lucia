@@ -1,0 +1,26 @@
+
+
+.footer{
+  background-color: $secondary-color;
+  padding: 10px;
+
+}
+.social {
+  
+  text-align:center;
+  padding-bottom:30px;
+  margin: 10px;
+  .icon {
+    margin: 5px;
+  }
+}
+
+.footer-basic .copyright {
+  margin:15px;
+  text-align:center;
+  font-size:13px;
+  color: $light-color;
+  font-family: Quicksand;
+  
+}
+
