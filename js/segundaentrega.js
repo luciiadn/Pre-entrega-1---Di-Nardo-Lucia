@@ -32,9 +32,6 @@ const Productos = [
 ]
 
 
-
-
-
 let opcion = prompt('Seleccioná una de las siguientes categorias para ver los productos que incluyen: \sublimación. \vinilos.  \papeleria');
 
 const categorias = [
@@ -45,17 +42,20 @@ const categorias = [
 ]
 
 
-const resultado = categorias.find ((el) => el.nombre === 'sublimación' )
+const resultado = categorias.find ((el) => el.categoria === '1' );
 alert ( 'En nuestra categoria de sublimacion podés encontrar los siguientes productos: remeras, gorras, tazas');
 
-const resultado2 = categorias.find ((el) => el.nombre === 'vinilos' )
+
+const resultado2 = categorias.find ((el) => el.categoria === '2' );
 alert ( 'En nuestra categoria de vinilos podés encontrar los siguientes productos: sticker, plotteos, carteles');
 
 
-const resultado3 = categorias.find ((el) => el.nombre === 'papeleria' )
+
+const resultado3 = categorias.find ((el) => el.categoria === '3' );
 alert ( 'En nuestra categoria de papelería podés encontrar los siguientes productos: agenda, invitaciónes, calendarios');
 
 
+alert ('continua para agregar un producto');
 
 
 
@@ -81,13 +81,6 @@ while (continuar) {
     console.log(Productos);
 
 }
-//Fin de pedir que se ingresen productos nuevos y sumarlos al array//
-
-
-
-
-
-
 
 
 
@@ -98,9 +91,8 @@ while (continuar) {
 let comprar = alert ('Estas ingresando al área de compras. Enter para continuar');
 let ProductoIngresado = prompt ('ingresá el nombre del producto');
 let PrecioIngresado = prompt ('ingresá el precio por unidad de venta, sin descuento');
-let CategoriaIngresada = prompt ('ingresá la categoría del producto');
 
-const producto1 = new producto (ProductoIngresado, PrecioIngresado, CategoriaIngresada );
+const producto1 = new producto1 (ProductoIngresado, PrecioIngresado);
 
 console.log(producto1);
 
@@ -111,8 +103,6 @@ producto1.Vender ();
 console.log(producto1.vendido);
 
 
-
-//fin comprar un producto con descuento//
 
 alert ('Gracias por su compra, vuelva prontos');
 
