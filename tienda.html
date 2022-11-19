@@ -8,13 +8,12 @@
     textiles, metales, goma y cerámica.">
     <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
-    <script defer src="./js/segundaentrega.js"></script>
+    <script defer src="./js/tercerentrega.js"></script>
     <link rel="icon" href="./imagenes/favicon.png">
     <title>Tienda</title>  
 </head>
 <body >
   <header>
-
     <nav class="navbar navbar-expand-lg colorgb">
       <div class="container-fluid">
         <a class="navbar-brand" href="">
@@ -43,6 +42,95 @@
     </nav>
   </header>
 
+
+  
+    <h1>Comprar</h1>
+
+<main>
+    <section class="cardIngreso visible">
+        <form id="ingresoDatosCarrito" class="formDatosCarrito" action="">
+            <div class="fila1">
+
+              <label for="tipo">Producto</label>
+                <select name="tipoCarrito" id="tipoCarrito">
+                    <option value="Sublimacion">Combo sublimación (mate+taza+gorra) $3000</option>
+                    <option value="papeleria">Combo papelería (agenda+tarjetas+lapicera) $4500 </option>
+                    <option value="vinilos">Combo Vinilos (stickers+pltteo vidriera) $7300</option>
+                </select>
+
+
+
+                <label for="monto">Cantidad</label>
+                <input type="text" name="monto" id="monto" title="Solo números. Mínimo 1"
+                    placeholder="Mínimo 1" autofocus>
+            </div>
+
+            <div class="fila2">
+                <label for="tipo">Elegí el tipo de pago</label>
+                <select name="tipoCarrito" id="tipoCarrito">
+                    <option value="debito">Tarjeta de débito</option>
+                    <option value="credito">Tarjeta de crédito </option>
+                </select>
+
+                <label for="tipo">Cuotas</label>
+                <select name="Cuotas" id="Cuotas">
+                    <option value="3">3 Cuotas</option>
+                    <option value="6">6 Cuotas </option>
+                </select>
+
+            </div>
+
+            <div class="fila3">
+                <div><input type="checkbox" name="guardarDatos" id="guardarDatos" value="">
+                    <label for="guardarDatos">Guardar datos para próximas compras</label>
+                </div>
+
+            </div>
+
+            <div class="acciones">
+                <input type="button" id="btnSiguiente" value="Siguiente">
+                <input type="button" id="btnCancelar" value="Cancelar">
+                <input type="button" id="btnUltima" value="Mi última compra">
+            </div>
+        </form>
+    </section>
+
+    
+    <section class="confirmacion oculta">
+        <div>
+            <h1>Los datos de tu compra</h1>
+            <ul id="listaDeCompra">
+
+
+
+                
+            </ul>
+            <input type="button" id="btnVolver" value="Volver">
+        </div>
+    </section>
+    <section class="resultado">
+    </section>
+</main>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
   <div class="main">
     <h1>TIENDA</h1>
     <ul class="cards">
@@ -75,8 +163,8 @@
             <button class="btn card_btn">$2800</button>
           </div>
         </div>
-      </li>
-      <li class="cards_item">
+      </li> -->
+      <!-- <li class="cards_item">
         <div class="card">
           <div class="card_image"><img src="./imagenes/p4.jpg"></div>
           <div class="card_content">
@@ -167,8 +255,8 @@
         </div>
       </li>
     </ul>
-  </div>
-  
+  </div> -->
+<!--   
   <h3 class="made_by">Made with ♡</h3>
 
   <div class="wave">
@@ -194,7 +282,7 @@
 
     </div>
       
-  </footer>
+  </footer> -->
 
 
 
