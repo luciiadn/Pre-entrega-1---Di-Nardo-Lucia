@@ -14,7 +14,8 @@ class Carrito {
         if (this.tarjeta == 'debito') {
             this.pago = this.producto;
         } else {
-            this.pago = (this.producto * (this.producto *0.10));
+            (this.pago == 'credito' )
+            this.producto * (this.producto *0.10);
         }
     }
 
@@ -71,7 +72,7 @@ function recuperarPFDeStorage(key) {
 
 btnSiguiente.addEventListener('click', () => {
     
-    const datosPF = new Carrito(producto.value, selectorTarjeta.value, selectorCuotas.value);
+    const datosCarrito = new Carrito(producto.value, selectorTarjeta.value, selectorCuotas.value);
 
 
     datosCarrito.calcularTotal();
@@ -88,7 +89,7 @@ btnSiguiente.addEventListener('click', () => {
         guardarCarritoEnStorage(datosCarrito);
     }
 
-    formDatos.reset();
+formDatos.reset();
 })
 
 

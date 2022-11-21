@@ -12,10 +12,7 @@ class Producto {
 
     }
 
-    AplicarDescuento () {
-        this.precio = this.precio* 1.25;
-     }
-
+   
      Vender (){
         this.vendido = true
      }
