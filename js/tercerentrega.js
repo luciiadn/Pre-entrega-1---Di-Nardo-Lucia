@@ -2,20 +2,20 @@ class Carrito {
 
     constructor(producto, cantidad, tarjeta, cuotas) {
         this.producto = producto;
-        this.fecha = new Date();
         this.cantidad = parseInt(cantidad);
         this.tarjeta = tarjeta;
         this.cuotas = cuotas;
         this.pago = 0;
+        this.fecha = new Date();
     }
 
-    
+
     calcularTotal(debito, credito) {
         if (this.tarjeta == 'debito') {
             this.pago = this.producto;
         } else {
-            (this.pago == 'credito' )
-            this.producto * (this.producto *0.10);
+            (this.pago == 'credito')
+            this.producto * (this.producto * 0.10);
         }
     }
 
@@ -38,11 +38,12 @@ const ComboElegido = [
         tipo: 'papelería',
         total: 4500
     },
-    {   numero: '3',
+    {
+        numero: '3',
         tipo: 'vinilos',
         total: 7300
     },
-   
+
 ]
 
 
@@ -52,8 +53,6 @@ const btnSiguiente = document.getElementById('btnSiguiente'),
     btnUltima = document.getElementById('btnUltima'),
     btnVolver = document.getElementById('btnVolver'),
     formDatos = document.getElementById('ingresoDatosCarrito'),
-    monto = document.getElementById('monto'),
-    selectorCuotas = document.getElementById('Cuotas'),
     checkDatos = document.getElementById('guardarDatos'),
     cardIngreso = document.querySelector('.cardIngreso'),
     confirmacion = document.querySelector('.confirmacion'),
@@ -66,30 +65,34 @@ function guardarCarritoenStorage(datos) {
 }
 
 function recuperarPFDeStorage(key) {
-        return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key));
 }
 
 
 btnSiguiente.addEventListener('click', () => {
-    
-    const datosCarrito = new Carrito(producto.value, selectorTarjeta.value, selectorCuotas.value);
+    let selectorCuotas = document.getElementById('Cuotas').value
+    let producto = document.getElementById('tipoCarrito').value
+    let selectorTarjeta = document.getElementById('tipoTarjeta').value
+    let cantidad = document.getElementById('monto').value
+    const datosCarrito = new Carrito(producto, cantidad, selectorTarjeta, selectorCuotas);
+    console.log(datosCarrito)
 
 
     datosCarrito.calcularTotal();
-    datosCarrito.calcularCredito(TresCuotas, SeisCuotas);
+    // datosCarrito.calcularCredito(TresCuotas, SeisCuotas);
     datosCarrito.calcularTotal();
 
-    
+
     cardIngreso.classList.replace('visible', 'oculta');
     confirmacion.classList.replace('oculta', 'visible');
 
-    crearHTMLResultados(datosCarrito);
+
 
     if (checkDatos.checked) {
-        guardarCarritoEnStorage(datosCarrito);
+        guardarCarritoenStorage(datosCarrito);
     }
 
-formDatos.reset();
+    formDatos.reset();
 })
 
 
@@ -100,7 +103,6 @@ btnCancelar.addEventListener('click', () => {
 
 
 btnVolver.addEventListener('click', () => {
-    //Mostrar y ocultar las secciones que corresponden
     cardIngreso.classList.replace('oculta', 'visible');
     confirmacion.classList.replace('visible', 'oculta');
     confirmacion.querySelector('ul').innerHTML = '';
