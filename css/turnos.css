@@ -1,0 +1,23 @@
+.body{
+    margin: 0px;
+    padding: 0px;    
+    font-family: Montserrat;
+   
+
+}
+.flip-card-3D-wrapper{
+
+    /* background-image: url(../imagenes/fondo2.jpg);
+    background-repeat: repeat; */
+    background-color: aqua;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+
+}
+
+.tittle{
+    text-align: center;
+    font-size: 30px;
+}
