@@ -1,3 +1,74 @@
+
+const contenedor = document.querySelector('#contenedorTarjetas');
+const container = document.querySelector('#cardContainer');
+const selectProfesion = document.querySelector('#profesion');
+const btnBuscar = document.querySelector('#buscar');
+const searchBtn = document.querySelector('#search');
+
+
+function filtrarProfesion(array) {
+    let profesion = selectProfesion.value;
+    if (!profesion) {
+        return array;
+    } else {
+        return array.filter((item) => item.profesion == profesion);
+    }
+}
+
+
+function crearHTML(array) {
+    contenedor.innerHTML = '';
+    container.innerHTML = '';
+    array.forEach((Nombre) => {
+        const tarjeta = `
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${Nombre.imagen}" class="card-img-top" alt="${Nombre.especialidad}">
+                    <div class="card-body">
+                        <h5 class="card-title">${Nombre.especialidad}</h5>
+                        <p class="card-text">Nombre: ${Nombre.Nombre}</p>
+                        <p class="card-text">especialidad: ${Nombre.especialidad}</p>
+                    </div>
+                </div>
+            </div>`;
+        contenedor.innerHTML += tarjeta;
+    })
+}
+
+btnBuscar.addEventListener('click', () => {
+    fetch('./js/data.json')
+        .then((response) => response.json())
+        .then((data) => {
+            localStorage.setItem('users',JSON.stringify(data));
+            crearHTML(filtrarEspecialidad(data));
+        })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const usuarios = [{
     nombre: 'lucia',
     mail: 'luciiadn@mail.com',
@@ -13,39 +84,57 @@ const usuarios = [{
 },
 ]
 
-const medicos = [{
-    nombre: "Pagliano, Marilina",
-    especialidad: "Médica clínica",
-    precioConsulta: 3800,
-    
-}, {
-    nombre: "Sandra Lardone",
-    especialidad: "pediatría",
-    precioConsulta: 2350,
+  
 
-}, {
-    nombre: "Magdalena Vissio",
-    especialidad: "Psicología",
-    precioConsulta: 1500,
-    
-}, {
-    nombre: "Delfina Tosselli",
-    especialidad: "Psicopedagogía",
-    precioConsulta: 2000,
-    
-}]
-
-
-const inputMailLogin = document.getElementById('emailLogin'),
+    const inputMailLogin = document.getElementById('emailLogin'),
     inputPassLogin = document.getElementById('passwordLogin'),
+    inputEdad = document.querySelector('Edad'),
     checkRecordar = document.getElementById('recordarme'),
     btnLogin = document.getElementById('login'),
     modalEl = document.getElementById('modalLogin'),
     modal = new bootstrap.Modal(modalEl),
     contTarjetas = document.getElementById('tarjetas'),
     elementosToggleables = document.querySelectorAll('.toggeable');
+    
 
+const medicos = [{
+    nombre: "Pagliano Marilina",
+    especialidad: "Médica clínica",
+    precioConsulta: 3800,
+    img: './imagenes/medico2.jpg'
+    
+}, {
+    nombre: "Sandra Lardone",
+    especialidad: "pediatría",
+    precioConsulta: 2350,
+    img: './imagenes/medico1.jpg'
 
+}, {
+    nombre: "Juan Pasteur",
+    especialidad: "Radiologia",
+    precioConsulta: 2800,
+    img: './imagenes/medico5.jpg'
+    
+}, {
+    nombre: "Delfina Tosselli",
+    especialidad: "Psico- pedagogía",
+    precioConsulta: 2000,
+    img: './imagenes/medico4.jpg'
+    
+},{
+    nombre: "Magdalena Vissio",
+    especialidad: "Psicología",
+    precioConsulta: 1500,
+    img: './imagenes/medico3.jpg'
+    
+}, {
+        nombre: "Carlos Baerza",
+        especialidad: "Odontología",
+        precioConsulta: 3500,
+        img: './imagenes/medico6.jpg'
+        
+    
+}]
 
 function validarUsuario(usersDB, user, pass) {
     let encontrado = usersDB.find((userDB) => userDB.mail == user);
@@ -96,9 +185,9 @@ function mostrarInfoMedicos(array) {
     array.forEach(element => {
         let html = `<div class="card cardMedicos" id="tarjeta${element.nombre}">
                 <h3 class="card-header" id="nombreMedicos"> ${element.nombre}</h3>
-                <img src="${element.img}" alt="${element.nombre}" class="card-img-bottom" id="fotoMascota">
+                <img src="${element.img}" alt="${element.nombre}" class="card-img-bottom" id="fotoMedico">
                 <div class="card-body">
-                    <p class="card-text" id="especialidadMedicos">Especie: ${element.especialidad}</p>
+                    <p class="card-text" id="especialidadMedicos">Especialidad: ${element.especialidad}</p>
                     
                 </div>
             </div>`;
@@ -144,7 +233,7 @@ btnLogin.addEventListener('click', (e) => {
               });
         } else {
 
-            //Revisamos si elige persistir la info aunque se cierre el navegador o no
+            
             if (checkRecordar.checked) {
                 guardarDatos(data, localStorage);
                 saludar(recuperarUsuario(localStorage));
@@ -152,9 +241,13 @@ btnLogin.addEventListener('click', (e) => {
                 guardarDatos(data, sessionStorage);
                 saludar(recuperarUsuario(sessionStorage));
             }
-            //Recién ahora cierro el cuadrito de login
+
+           
+  
+
+            
             modal.hide();
-            //Muestro la info para usuarios logueados
+            
             mostrarInfoMedicos(medicos);
             presentarInfo(elementosToggleables, 'd-none');
         }
@@ -167,3 +260,30 @@ btnLogout.addEventListener('click', () => {
 });
 
 estaLogueado(recuperarUsuario(localStorage));
+
+
+
+
+
+
+
+
+
+
+
+//VER//
+
+const btnDudas = document.getElementById('#btnDudas')
+const foto = document.querySelector ('.foto')
+
+let tiempo = 10000;
+
+dudas.onclick = () =>{
+    foto.classList.add ('visible')
+
+    setTimeout ( () => {
+        foto.classList.remove ('visible')
+    }, tiempo)
+}
+
+

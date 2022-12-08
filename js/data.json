@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "Nombre": "pagliano marilina",
+        "especialidad": "clínico",
+        "imagen": "./imagenes/medico2.jpg"
+    },{
+        "id": 2,
+        "Nombre": "sandra lardone",
+        "especialidad": "pediatria",
+        "imagen": "./imagenes/medico1.jpg"
+    },{
+        "id": 3,
+        "Nombre": "juan pasteur",
+        "especialidad": "radiologia",
+        "imagen": "./imagenes/medico5.jpg"
+    },{
+        "id": 4,
+        "Nombre": "delfina toselli",
+        "especialidad": "psicopedagogia",
+        "imagen": "./imagenes/medico4.jpg"
+    },{
+        "id": 5,
+        "Nombre": "magdalena vissio",
+        "especialidad": "psicologia",
+        "imagen": "./imagenes/medico3.jpg"
+    },{
+        "id": 6,
+        "Nombre": "carlos baeza",
+        "especialidad": "odontologia",
+        "imagen": "./imagenes/medico6.jpg"
+    }
+]
+
+
