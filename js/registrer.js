@@ -1,45 +1,20 @@
-bfetch ('./data.json')
-.then(rest => rest.json() )
-.then(data => filtrarProfesion(data));
 
-let Profesion = JSON.parse(localStorage.getItem('profesion')) || [];
-
-const contenedor = document.getElementById('#contenedorTarjetas');
-const container = document.getElementById('#cardContainer');
 const selectEspecialidad = document.getElementById('#especialidad');
 const btnBuscar = document.querySelectorAll('.btnBuscar');
 
+const especialidad = "json/data.json";
 
-function crearHTML(data) {
-    
-    data.forEach((Nombre) => {
-        const tarjeta = document.createElement ('div')
-        tarjeta.innerHTML `
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="${Nombre.imagen}" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text">Nombre: ${Nombre.Nombre}</p>
-                            <p class="card-text">Profesion: ${Nombre.especialidad}</p>
-                            <button id="{$Nombre.id}" class="btn btnBuscar btn-primary> Buscar</button>
-                        </div>
-                    </div>
-                </div>`;
-        contenedor.innerHTML += tarjeta;
+fetch(especialidad)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach( nombre => {
+            listado.innerHTML += `<h2>Nombre: ${nombre.nombre} </h2>
+            <p> especialidad: ${nombre.especialidad}</p>
+            <p> ID: ${nombre.id}</p>`
+        })
     })
-}
-
-btnBuscar.forEach=>(el => {
-    el.addEventListener('click', (e) =>{
-        buscarEspecialidad (e.target.id, data)
-    })
-})
-
-
-// searchBtn.addEventListener('click',()=>{
-//     bringData();
-// })
-
+    .catch(error => console.log(error))
+    .finally(() => console.log("Proceso Finalizado"));
 
 // LOGIN //
 
@@ -238,21 +213,49 @@ estaLogueado(recuperarUsuario(localStorage));
 
 //TURNERO//
 
-//VER//
+// //VER//
 
-const btn = document.querySelector('#btn')
-const foto = document.querySelector ('.fotoDudas')
+// const btn = document.querySelector('#btn')
+// const foto = document.querySelector ('.fotoDudas')
 
-let tiempo = 10000;
+// let tiempo = 10000;
 
-btn.onclick =()=>{
-    fotoDudas.classList.add ('visible')
+// btn.onclick =()=>{
+//     fotoDudas.classList.add ('visible')
 
-    setTimeout(()=> {
-        fotoDudas.classList.remove ('visible')
-    }, tiempo)
+//     setTimeout(()=> {
+//         fotoDudas.classList.remove ('visible')
+//     }, tiempo)
+// }
+
+
+
+class obraSocial {
+
+    constructor (obraSocial, sinObraSocial){
+
+    this.obraSocial = 1000;
+    this.sinObraSocial = 2500;
+
+}
 }
 
-function comunicar (precio) {
-    if ()
+calcularTotal (pagoTotal) 
+    if (this.pagoTotal == 'obraSocial') {
+        this.pagoTotal = (this.precioConsulta + this.obraSocial);
+        swal("el total a pagar al momento del turno es de ('this", {
+            buttons: false,
+            timer: 2000,}); 
+
+} else(this.pagoTotal == 'sinObraSocial') 
+    this.pagoTotal = (this.precioConsulta + this.sinObraSocial);
+
+
+
+btnTurno.onclick =()=>{
+    btnTurno.classList.add ('visible')
+
+    setTimeout(()=> {
+        btnTurno.classList.remove ('visible')
+    }, tiempo)
 }

@@ -88,3 +88,11 @@ input{
     text-align: center;
 }
 
+.btnTurno{
+    text-align: center;
+    width: 600px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+    
+}
