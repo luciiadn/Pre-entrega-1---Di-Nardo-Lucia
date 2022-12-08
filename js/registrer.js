@@ -1,106 +1,44 @@
+bfetch ('./data.json')
+.then(rest => rest.json() )
+.then(data => filtrarProfesion(data));
+
+let Profesion = JSON.parse(localStorage.getItem('profesion')) || [];
+
 const contenedor = document.getElementById('#contenedorTarjetas');
 const container = document.getElementById('#cardContainer');
 const selectEspecialidad = document.getElementById('#especialidad');
-const btnBuscar = document.getElementById('#buscar');
-const searchBtn = document.getElementById('#search');
+const btnBuscar = document.querySelectorAll('.btnBuscar');
 
 
-function filtrarProfesion(array) {
-    let profesion = selectEspecialidad.value;
-    if (!profesion) {
-        return array;
-    } else {
-        return array.filter((item) => item.especialidad == profesion);
-    }
-}
-
-function crearHTML(array) {
-    contenedor.innerHTML = '';
-    container.innerHTML = '';
-    array.forEach((Nombre) => {
-        const tarjeta = `
-            <div class="col">
-                <div class="card h-100">
-                    <img src="${Nombre.imagen}" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-text">Nombre: ${Nombre.Nombre}</p>
-                        <p class="card-text">Profesion: ${Nombre.especialidad}</p>
+function crearHTML(data) {
+    
+    data.forEach((Nombre) => {
+        const tarjeta = document.createElement ('div')
+        tarjeta.innerHTML `
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="${Nombre.imagen}" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Nombre: ${Nombre.Nombre}</p>
+                            <p class="card-text">Profesion: ${Nombre.especialidad}</p>
+                            <button id="{$Nombre.id}" class="btn btnBuscar btn-primary> Buscar</button>
+                        </div>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
         contenedor.innerHTML += tarjeta;
     })
 }
 
-btnBuscar.addEventListener('click', () => {
-    fetch('./js/data.json') //un json dentro del proyecto con la info en español
-        .then((response) => response.json())
-        .then((data) => {
-            localStorage.setItem('users',JSON.stringify(data));
-            crearHTML(filtrarCasa(data));
-        })
-})
-
-// async function bringData(){
-//     const response = await fetch('https://hp-api.herokuapp.com/api/characters'); //acá traigo la info desde una API
-//     const data = await response.json();
-//     createHTML(specialityFilter(data));
-// }
-
-searchBtn.addEventListener('click',()=>{
-    bringData();
+btnBuscar.forEach=>(el => {
+    el.addEventListener('click', (e) =>{
+        buscarEspecialidad (e.target.id, data)
+    })
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// searchBtn.addEventListener('click',()=>{
+//     bringData();
+// })
 
 
 // LOGIN //
@@ -302,26 +240,29 @@ estaLogueado(recuperarUsuario(localStorage));
 
 
 
-
-
-
-
-
 //TURNERO//
 
 //VER//
 
-const btnDudas = document.getElementById('#btnDudas')
-const foto = document.querySelector ('.foto')
+const btn = document.querySelector('#btn')
+const foto = document.querySelector ('.fotoDudas')
 
 let tiempo = 10000;
 
-dudas.onclick = () =>{
-    foto.classList.add ('visible')
+btn.onclick =()=>{
+    fotoDudas.classList.add ('visible')
 
-    setTimeout ( () => {
-        foto.classList.remove ('visible')
+    setTimeout(()=> {
+        fotoDudas.classList.remove ('visible')
     }, tiempo)
 }
 
+// const btn = document.querySelector('#btn')
+// const foto = document.querySelector('.foto')
 
+// let tiempo = 2500;
+// btn.onclick=()=>{
+//     foto.classList.add('visible');
+//     setTimeout(()=>{
+//         foto.classList.remove('visible')
+//     },tiempo);
