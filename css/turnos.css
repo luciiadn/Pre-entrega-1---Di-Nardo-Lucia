@@ -21,3 +21,30 @@
     text-align: center;
     font-size: 30px;
 }
+
+
+.welcome {
+    font-size: 50px;
+    color: #51a8b1;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-shadow: 4px 3px 3px rgba(89,79,77,0.6);
+}
+
+
+
+.seleccion{
+    align-items: center;
+    text-align: center;
+    display: block;
+    
+}
+
+.speciality{
+    height: 38px;
+    width: 300px;
+    border-radius: 10px;
+    border: solid 2px #51a8b1;
+
+}
+

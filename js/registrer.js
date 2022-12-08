@@ -1,20 +1,18 @@
-
-const contenedor = document.querySelector('#contenedorTarjetas');
-const container = document.querySelector('#cardContainer');
-const selectProfesion = document.querySelector('#profesion');
-const btnBuscar = document.querySelector('#buscar');
-const searchBtn = document.querySelector('#search');
+const contenedor = document.getElementById('#contenedorTarjetas');
+const container = document.getElementById('#cardContainer');
+const selectEspecialidad = document.getElementById('#especialidad');
+const btnBuscar = document.getElementById('#buscar');
+const searchBtn = document.getElementById('#search');
 
 
 function filtrarProfesion(array) {
-    let profesion = selectProfesion.value;
+    let profesion = selectEspecialidad.value;
     if (!profesion) {
         return array;
     } else {
-        return array.filter((item) => item.profesion == profesion);
+        return array.filter((item) => item.especialidad == profesion);
     }
 }
-
 
 function crearHTML(array) {
     contenedor.innerHTML = '';
@@ -23,11 +21,10 @@ function crearHTML(array) {
         const tarjeta = `
             <div class="col">
                 <div class="card h-100">
-                    <img src="${Nombre.imagen}" class="card-img-top" alt="${Nombre.especialidad}">
+                    <img src="${Nombre.imagen}" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">${Nombre.especialidad}</h5>
                         <p class="card-text">Nombre: ${Nombre.Nombre}</p>
-                        <p class="card-text">especialidad: ${Nombre.especialidad}</p>
+                        <p class="card-text">Profesion: ${Nombre.especialidad}</p>
                     </div>
                 </div>
             </div>`;
@@ -36,12 +33,22 @@ function crearHTML(array) {
 }
 
 btnBuscar.addEventListener('click', () => {
-    fetch('./js/data.json')
+    fetch('./js/data.json') //un json dentro del proyecto con la info en español
         .then((response) => response.json())
         .then((data) => {
             localStorage.setItem('users',JSON.stringify(data));
-            crearHTML(filtrarEspecialidad(data));
+            crearHTML(filtrarCasa(data));
         })
+})
+
+// async function bringData(){
+//     const response = await fetch('https://hp-api.herokuapp.com/api/characters'); //acá traigo la info desde una API
+//     const data = await response.json();
+//     createHTML(specialityFilter(data));
+// }
+
+searchBtn.addEventListener('click',()=>{
+    bringData();
 })
 
 
@@ -66,6 +73,37 @@ btnBuscar.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// LOGIN //
 
 
 
@@ -269,7 +307,7 @@ estaLogueado(recuperarUsuario(localStorage));
 
 
 
-
+//TURNERO//
 
 //VER//
 
