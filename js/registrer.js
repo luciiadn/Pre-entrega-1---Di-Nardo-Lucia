@@ -82,31 +82,31 @@ const medicos = [{
 }, {
     nombre: "Sandra Lardone",
     especialidad: "pediatría",
-    precioConsulta: 2350,
+    precioConsulta: 3800,
     img: './imagenes/medico1.jpg'
 
 }, {
     nombre: "Juan Pasteur",
     especialidad: "Radiologia",
-    precioConsulta: 2800,
+    precioConsulta: 3800,
     img: './imagenes/medico5.jpg'
     
 }, {
     nombre: "Delfina Tosselli",
     especialidad: "Psico- pedagogía",
-    precioConsulta: 2000,
+    precioConsulta: 3800,
     img: './imagenes/medico4.jpg'
     
 },{
     nombre: "Magdalena Vissio",
     especialidad: "Psicología",
-    precioConsulta: 1500,
+    precioConsulta: 3800,
     img: './imagenes/medico3.jpg'
     
 }, {
         nombre: "Carlos Baerza",
         especialidad: "Odontología",
-        precioConsulta: 3500,
+        precioConsulta: 3800,
         img: './imagenes/medico6.jpg'
         
     
@@ -217,10 +217,6 @@ btnLogin.addEventListener('click', (e) => {
                 guardarDatos(data, sessionStorage);
                 saludar(recuperarUsuario(sessionStorage));
             }
-
-           
-  
-
             
             modal.hide();
             
@@ -257,12 +253,6 @@ btn.onclick =()=>{
     }, tiempo)
 }
 
-// const btn = document.querySelector('#btn')
-// const foto = document.querySelector('.foto')
-
-// let tiempo = 2500;
-// btn.onclick=()=>{
-//     foto.classList.add('visible');
-//     setTimeout(()=>{
-//         foto.classList.remove('visible')
-//     },tiempo);
+function comunicar (precio) {
+    if ()
+}

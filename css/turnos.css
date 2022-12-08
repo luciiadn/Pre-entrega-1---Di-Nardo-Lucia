@@ -5,16 +5,21 @@
    
 
 }
-.flip-card-3D-wrapper{
+.containerTurnero{
 
-    /* background-image: url(../imagenes/fondo2.jpg);
-    background-repeat: repeat; */
-    background-color: aqua;
+    background-image: url(../imagenes/fondo2.jpg);
+    background-repeat: repeat;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 50px;
+    padding: 60px;
+    
 
+
+}
+
+.card-header {
+    text-align: center;
 }
 
 .tittle{
@@ -29,6 +34,7 @@
     font-family: Montserrat;
     font-weight: 600;
     text-shadow: 4px 3px 3px rgba(89,79,77,0.6);
+
 }
 
 
@@ -40,15 +46,45 @@
     
 }
 
-.speciality{
-    height: 38px;
-    width: 300px;
-    border-radius: 10px;
-    border: solid 2px #51a8b1;
+.form-control{
+    text-align: center;
+    width: 600px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+
 
 }
 
-.fotoDudas {
-    background-image: url(/imagenes/dudas.jpg);
+.dias{
+    text-align: center;
+    width: 600px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+    color: white;
+}
+
+.time{
+    text-align: center;
+    width: 600px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+    color: white;
+
+}
+
+.form-group{
+    text-align: center;
+    width: 600px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+    color: white;
+
+}
+input{
+    text-align: center;
 }
 
