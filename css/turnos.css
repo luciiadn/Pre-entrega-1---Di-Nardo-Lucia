@@ -13,8 +13,6 @@
     width: 100%;
     height: auto;
     padding: 60px;
-    
-
 
 }
 
@@ -66,12 +64,7 @@
 }
 
 .time{
-    text-align: center;
-    width: 600px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-    color: white;
+  text-align: center;
 
 }
 
@@ -95,4 +88,18 @@ input{
 	margin: 0 auto 20px;
 	position: relative;
     
+}
+
+.cards{
+    background-color: gray;
+    text-align: center;
+    width: 800px;
+    display:block;
+	margin: 0 auto 20px;
+	position: relative;
+    color: white;
+    border-radius: 20px;
+    padding: 15px;
+
+
 }

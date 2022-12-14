@@ -2,7 +2,7 @@
 const selectEspecialidad = document.getElementById('#especialidad');
 const btnBuscar = document.querySelectorAll('.btnBuscar');
 
-const especialidad = "json/data.json";
+const especialidad = "js/data.json";
 
 fetch(especialidad)
     .then(respuesta => respuesta.json())
@@ -211,51 +211,33 @@ estaLogueado(recuperarUsuario(localStorage));
 
 
 
-//TURNERO//
 
-// //VER//
-
-// const btn = document.querySelector('#btn')
-// const foto = document.querySelector ('.fotoDudas')
-
-// let tiempo = 10000;
-
-// btn.onclick =()=>{
-//     fotoDudas.classList.add ('visible')
-
-//     setTimeout(()=> {
-//         fotoDudas.classList.remove ('visible')
-//     }, tiempo)
-// }
-
-
-
-class obraSocial {
+class ObraSocial {
 
     constructor (obraSocial, sinObraSocial){
 
     this.obraSocial = 1000;
     this.sinObraSocial = 2500;
 
+
+
+    function calcularTotal (){
+
+        calcularTotal (pagoTotal) 
+            if (this.pagoTotal == 'obraSocial') {
+                this.pagoTotal = (this.precioConsulta + this.obraSocial);
+                swal("el total a pagar al momento del turno es de ('this", {
+                    buttons: false,
+                    timer: 2000,}); 
+
+        } else(this.pagoTotal == 'sinObraSocial') 
+            this.pagoTotal = (this.precioConsulta + this.sinObraSocial);
+
+    }
 }
+
 }
 
-calcularTotal (pagoTotal) 
-    if (this.pagoTotal == 'obraSocial') {
-        this.pagoTotal = (this.precioConsulta + this.obraSocial);
-        swal("el total a pagar al momento del turno es de ('this", {
-            buttons: false,
-            timer: 2000,}); 
-
-} else(this.pagoTotal == 'sinObraSocial') 
-    this.pagoTotal = (this.precioConsulta + this.sinObraSocial);
-
-
-
-btnTurno.onclick =()=>{
-    btnTurno.classList.add ('visible')
-
-    setTimeout(()=> {
-        btnTurno.classList.remove ('visible')
-    }, tiempo)
-}
+btnTurno.addEventListener('click', () => {
+    presentarInfo(calcularTotal);
+})
