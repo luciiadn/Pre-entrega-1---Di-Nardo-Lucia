@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="turnos.html">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script defer src="js/registrer.js"></script>
+    
+
 </head>
 
 <body>
@@ -75,29 +77,30 @@
 
             <div id="logged" class="container-fluid">
 
-                <main class="container">
+                <div class="container">
                     <div class="seleccion">
-                        <p>Servicios que ofrece nuestro centro</p>
-                        <select id="profesion">
-                            <option value="">Elige una especialidad</option>
-                            <option value="clinico">Clínico</option>
-                            <option value="pediatria">Pediatría</option>
-                            <option value="psicologia">Psicología</option>
-                            <option value="radiologia">Odontología</option>
-                            <option value="psicopedagogia">Psicopedagogía</option>
-                            <option value="radiologia">Radiologia</option>
-                        </select>
-                        <button id="buscar" class="btn btn-outline-dark">Buscar</button>
-                    <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorTarjetas">
-                        
-        
+                            <p>Servicios que ofrece nuestro centro</p>
+                            <select id="profesion">
+                                <option value="">Elige una especialidad</option>
+                                <option value="clinico">Clínico</option>
+                                <option value="pediatria">Pediatría</option>
+                                <option value="psicologia">Psicología</option>
+                                <option value="radiologia">Odontología</option>
+                                <option value="psicopedagogia">Psicopedagogía</option>
+                                <option value="radiologia">Radiologia</option>
+                            </select>
+                            <button id="buscar">Buscar</button>
+                            <button id="search">Search</button>
+                    </div>   
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorTarjetas">       
                     </div>
-        
+            
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer">
-        
                     </div>
-        
-                </main>
+                    
+            
+                </div>
         
             </div>
 
@@ -114,5 +117,5 @@
 
     
 </body>
-
+<script defer src="js/selector.js"></script>
 </html>

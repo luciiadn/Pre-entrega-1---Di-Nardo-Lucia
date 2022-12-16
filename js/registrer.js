@@ -1,21 +1,3 @@
-
-const selectEspecialidad = document.getElementById('#especialidad');
-const btnBuscar = document.querySelectorAll('.btnBuscar');
-
-const especialidad = "js/data.json";
-
-fetch(especialidad)
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-        datos.forEach( nombre => {
-            listado.innerHTML += `<h2>Nombre: ${nombre.nombre} </h2>
-            <p> especialidad: ${nombre.especialidad}</p>
-            <p> ID: ${nombre.id}</p>`
-        })
-    })
-    .catch(error => console.log(error))
-    .finally(() => console.log("Proceso Finalizado"));
-
 // LOGIN //
 
 
@@ -46,6 +28,7 @@ const usuarios = [{
     modal = new bootstrap.Modal(modalEl),
     contTarjetas = document.getElementById('tarjetas'),
     elementosToggleables = document.querySelectorAll('.toggeable');
+    containerTurneros = document.getElementById ('fomulario')
     
 
 const medicos = [{
@@ -212,7 +195,7 @@ estaLogueado(recuperarUsuario(localStorage));
 
 
 
-class ObraSocial {
+class mutuales {
 
     constructor (obraSocial, sinObraSocial){
 
@@ -223,21 +206,20 @@ class ObraSocial {
 
     function calcularTotal (){
 
-        calcularTotal (pagoTotal) 
-            if (this.pagoTotal == 'obraSocial') {
-                this.pagoTotal = (this.precioConsulta + this.obraSocial);
+         if ( mutuales == 'particular') {
+                calcularTotal = (this.precioConsulta + this.obraSocial);
                 swal("el total a pagar al momento del turno es de ('this", {
                     buttons: false,
                     timer: 2000,}); 
 
-        } else(this.pagoTotal == 'sinObraSocial') 
-            this.pagoTotal = (this.precioConsulta + this.sinObraSocial);
+        } else( mutuales == 'Obra Social') 
+            calcularTotal = (this.precioConsulta + this.sinObraSocial);
 
     }
 }
-
 }
 
-btnTurno.addEventListener('click', () => {
+
+btnTurno.addEventListener('submit', () => {
     presentarInfo(calcularTotal);
 })

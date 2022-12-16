@@ -1,33 +1,39 @@
 [
     {
         "id": 1,
-        "Nombre": "pagliano marilina",
-        "especialidad": "clínico",
+        "nombre": "pagliano marilina",
+        "especialidad": "clinico",
+        "estudioMedicina": true,
         "imagen": "./imagenes/medico2.jpg"
     },{
         "id": 2,
-        "Nombre": "sandra lardone",
+        "nombre": "sandra lardone",
         "especialidad": "pediatria",
+        "estudioMedicina": true,
         "imagen": "./imagenes/medico1.jpg"
     },{
         "id": 3,
-        "Nombre": "juan pasteur",
+        "nombre": "juan pasteur",
         "especialidad": "radiologia",
+        "estudioMedicina": true,
         "imagen": "./imagenes/medico5.jpg"
     },{
         "id": 4,
-        "Nombre": "delfina toselli",
+        "nombre": "delfina toselli",
         "especialidad": "psicopedagogia",
+        "estudioMedicina": false,
         "imagen": "./imagenes/medico4.jpg"
     },{
         "id": 5,
-        "Nombre": "magdalena vissio",
+        "nombre": "magdalena vissio",
         "especialidad": "psicologia",
+        "estudioMedicina": false,
         "imagen": "./imagenes/medico3.jpg"
     },{
         "id": 6,
-        "Nombre": "carlos baeza",
+        "nombre": "carlos baeza",
         "especialidad": "odontologia",
+        "estudioMedicina": false,
         "imagen": "./imagenes/medico6.jpg"
     }
 ]
