@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/turnos.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script defer src="./js/registrer.js"></script>
+    
 </head>
 
 <body>
@@ -75,35 +75,7 @@
                 </div>
             </div>
 
-            <div id="logged" class="container-fluid">
-
-                <main class="container">
-                    <div class="seleccion">
-                        <p>Servicios que ofrece nuestro centro</p>
-                        <select id="profesion">
-                            <option value="">Elige una especialidad</option>
-                            <option value="clinico">Clínico</option>
-                            <option value="pediatria">Pediatría</option>
-                            <option value="psicologia">Psicología</option>
-                            <option value="radiologia">Odontología</option>
-                            <option value="psicopedagogia">Psicopedagogía</option>
-                            <option value="radiologia">Radiologia</option>
-                        </select>
-                        <button id="buscar" class="btn btn-outline-dark">Buscar</button>
-                        <button id="search">Search</button>
-                    </div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorTarjetas">
-                        
-        
-                    </div>
-        
-                    <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer">
-        
-                    </div>
-        
-                </main>
-        
-            </div>
+            
 
         </section>
 
@@ -112,9 +84,36 @@
             <p>Para solicitar un turno, <a href="./turnos.html">ingresá aqui</a></p>
             <div id="tarjetas" class="card-group"></div>
         </section>
+        <div id="logged" class="container-fluid">
+
+            <div class="container">
+                <div class="seleccion">
+                    <p>Servicios que ofrece nuestro centro</p>
+                    <select id="profesion">
+                        <option value="">Elige una especialidad</option>
+                        <option value="clinico">Clínico</option>
+                        <option value="pediatria">Pediatría</option>
+                        <option value="psicologia">Psicología</option>
+                        <option value="radiologia">Odontología</option>
+                        <option value="psicopedagogia">Psicopedagogía</option>
+                        <option value="radiologia">Radiologia</option>
+                    </select>
+                    <button id="buscar" class="btnBuscar">Buscar</button>
+                    
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorTarjetas">
+                    
+    
+                </div>
+    
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer">
+    
+                </div>
+    
+            </div>
+    
+        </div>
     </main>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
