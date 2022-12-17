@@ -1,171 +1,87 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turnos</title>
-    <link rel="icon" href="./imagenes/Sin título-1ggg.png">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/turnos.css">
-  <script defer src="js/registrer.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro&family=Tiro+Telugu&display=swap"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        rel="stylesheet">
+    <title>Simulador de plazo fijo</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/plazoFijo.js"></script>
+    <script defer src="./js/registrer.js"></script>
+
 </head>
-<body class="body">
-  <div id="containerTurnero" >
-      <div class="cards m-3">
-          <div class="cardFront bg-secondary">
 
-              <div class="div-ayuda-config">
-                <i id="btnAyuda" class="bi bi-question ayuda jello-horizontal fs-3 mx-3 scale" type="button"
-                    title="Ayuda"></i>
+<body>
+    <header>
+        <h1>Simulá tu Plazo Fijo</h1>
+    </header>
+    <main>
+        <section class="cardIngreso visible">
+            <form id="ingresoDatosPF" class="formDatosPF" action="">
+                <div class="fila1">
+                    <label for="monto">¿Cuánto querés invertir?</label>
+                    <input type="text" name="monto" id="monto" title="Solo números. Mínimo $100"
+                        placeholder="Mínimo $100" autofocus>
 
-                <i id="flip-card-btn-turn-to-back" type="button" class="bi bi-gear-fill scale rotate-90-cw"
-                    data-toggle="tooltip" data-placement="bottom" title="Configuración"></i>
-              </div>
-
-              <div class="card-header text-light">
-                  <h1 class="tittle">SOLICITAR TURNO</h1>
-              </div>
-
-              <br>
-              
-                    <select class="form-control ">
-                      <option>Selecciona un especialista</option>
-                      <option>Pagliano Marilina  - Médica Clínica</option>
-                      <option>Lardone Sandra - Pediatría</option>
-                      <option>Juan Pasteur - radiologia</option>
-                      <option>Magdalena Vissio - Psicología</option>
-                      <option>Delfina Tosselli - Psicopedagogía</option>
-                      <option>Carlos Baerza - Odontología</option>
-                    </select>
-
-                    <br>
-
-
-                  <div class="dias">
-                  <form name="formulario" method="post" action="/send.php">
-                    
-                    Selecciona la fecha deseada:
-                    <input type="date" name="fecha" min="2022-11-1" max="2023-05-30" />
-                    
-                  </form>
+                    <label for="dias">¿A cuántos días?</label>
+                    <input type="text" name="dias" id="dias" title="Solo números. Mínimo 30 días"
+                        placeholder="Mínimo 30 días">
                 </div>
 
-                  <br>
+                <div class="fila2">
+                    <label for="tipo">Elegí el tipo de plazo fijo</label>
+                    <select name="tipoPF" id="tipoPF">
+                        <option value="pesos">Plazo fijo en pesos</option>
+                        <option value="dolares">Plazo fijo en dólares</option>
+                    </select>
 
+                    <label for="cuentas">Se va a debitar de la cuenta</label>
+                    <select name="cuentas" id="cuentas">
+                        
+                    </select>
+                </div>
 
-
-
-                  <div class="time">
-                    <p>Selecciona la hora</p>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">09.30</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">10.30</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">11.30</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">15</label>
-                    </div><div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">16</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">17</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">18</label>
-                    </div>
-                  </div>
-                  <br>
-
-
-
-                  
-
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group row ">
-                        <label for="Name">Nombre</label>
-                        <input type="Name"  id="inputName" placeholder="Nombre">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group row">
-                        <label for="LastName">Apellido</label>
-                        <input type="LastName"  id="inputLastName" placeholder="Apellido">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group row">
-                        <label for="inputEdad">Edad</label>
-                        <input type="Edad" id="inputEdad" placeholder="Edad">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group row">
-                        <label for="inputEmai">Email</label>
-                        <input type="email" id="inputEmai" placeholder="Email">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputAddress">Direccion</label>
-                      <input type="text" id="inputAddress" placeholder="Direccion">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group row">
-                        <label for="inputCity">Ciudad</label>
-                        <input type="text"  id="Ciudad" placeholder="Cuidad">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group row">
-                        <label for="inputCity">Provincia</label>
-                        <input type="text"  id="Provincia" placeholder="Povincia">
-                      </div>
+                <div class="fila3">
+                    <div><input type="checkbox" name="guardarDatos" id="guardarDatos" value="">
+                        <label for="guardarDatos">Almacenar los resultados para futura referencia</label>
                     </div>
 
+                </div>
 
-                    <br>
-                    <div class="obrasSociales">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                          Obra Social
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                          Particular
-                        </label>
-                      </div>
-                    
-                    </div>
-                    <br>
+                <div class="acciones">
+                    <input type="button" id="btnSiguiente" value="Siguiente">
+                    <input type="button" id="btnCancelar" value="Cancelar">
+                    <input type="button" id="btnUltima" value="Mostrar última simulación">
+                </div>
+            </form>
+        </section>
 
-                    <button type="submit" class="btnTurno btn-dark">Solicitar turno</button>
-                  </form>
         
-          
-           
-            
-            
+        <section class="confirmacion oculta">
+            <div>
+                <h1>Los datos de tu simulación</h1>
+                <ul id="listaDeConfirmacion">
 
+
+
+                    
+                </ul>
+                <input type="button" id="btnVolver" value="Volver">
+            </div>
+        </section>
+        <section class="resultado">
+        </section>
+    </main>
+
+  
 </body>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </html>
-
-

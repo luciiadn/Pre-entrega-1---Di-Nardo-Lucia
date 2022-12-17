@@ -28,7 +28,6 @@ const usuarios = [{
     modal = new bootstrap.Modal(modalEl),
     contTarjetas = document.getElementById('tarjetas'),
     elementosToggleables = document.querySelectorAll('.toggeable');
-    containerTurneros = document.getElementById ('fomulario')
     
 
 const medicos = [{
@@ -195,31 +194,3 @@ estaLogueado(recuperarUsuario(localStorage));
 
 
 
-class mutuales {
-
-    constructor (obraSocial, sinObraSocial){
-
-    this.obraSocial = 1000;
-    this.sinObraSocial = 2500;
-
-
-
-    function calcularTotal (){
-
-         if ( mutuales == 'particular') {
-                calcularTotal = (this.precioConsulta + this.obraSocial);
-                swal("el total a pagar al momento del turno es de ('this", {
-                    buttons: false,
-                    timer: 2000,}); 
-
-        } else( mutuales == 'Obra Social') 
-            calcularTotal = (this.precioConsulta + this.sinObraSocial);
-
-    }
-}
-}
-
-
-btnTurno.addEventListener('submit', () => {
-    presentarInfo(calcularTotal);
-})
