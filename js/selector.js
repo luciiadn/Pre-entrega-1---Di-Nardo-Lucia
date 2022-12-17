@@ -1,6 +1,6 @@
 const contenedor = document.querySelector('#contenedorTarjetas');
 const container = document.querySelector('#cardContainer');
-const selectProfesion = document.getElementById('#profesion');
+const selectProfesion = document.getElementById('profesion');
 const btnBuscar = document.querySelector('#btnBuscar');
 const buscar = document.getElementById ('buscar')
 
@@ -33,14 +33,14 @@ function createHTML(array) {
         
     })
     
-      
-    buscar.addEventListener('click', () => {
-        fetch("/js/data.json")
-            .then(response => response.json())
-            .then (data => {
-                localStorage.setItem('user',JSON.stringify(data));
-                createHTML(filtrarProfesion(data));
-            })
-    })
+   
 }
+buscar.addEventListener('click', () => {
+    fetch("/js/data.json")
+        .then(response => response.json())
+        .then (data => {
+            localStorage.setItem('user',JSON.stringify(data));
+            createHTML(filtrarProfesion(data));
+        })
+})    
 
