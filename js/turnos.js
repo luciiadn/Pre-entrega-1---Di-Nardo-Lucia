@@ -87,7 +87,7 @@ function verMedicos(medicosDisponibles) {
 }
 
 let medicosDisponibles = elegirCobertura()
-window.onload = verMedicos(medicosDisponibles);
+window.onload = verMedicos(medicosDisponibles)
 
 
 selectorCobertura.onchange = () => {
