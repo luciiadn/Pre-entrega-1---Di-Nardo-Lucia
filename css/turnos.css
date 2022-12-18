@@ -1,10 +1,25 @@
-.body{
-    margin: 0px;
-    padding: 0px;    
+*{
+    margin: 0;
+    padding: 0;
     font-family: Montserrat;
-   
+    
 
 }
+
+.headerTurnero{
+    width: 100%;
+    background-color: #51A8B1;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
 #containerTurnero{
 
     background-image: url(../imagenes/fondo2.jpg);
@@ -16,90 +31,3 @@
 
 }
 
-.card-header {
-    text-align: center;
-}
-
-.tittle{
-    text-align: center;
-    font-size: 30px;
-}
-
-
-.welcome {
-    font-size: 50px;
-    color: #51a8b1;
-    font-family: Montserrat;
-    font-weight: 600;
-    text-shadow: 4px 3px 3px rgba(89,79,77,0.6);
-
-}
-
-
-
-.seleccion{
-    align-items: center;
-    text-align: center;
-    display: block;
-    
-}
-
-.form-control{
-    text-align: center;
-    width: 600px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-
-
-}
-
-.dias{
-    text-align: center;
-    width: 600px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-    color: white;
-}
-
-.time{
-  text-align: center;
-
-}
-
-.form-group{
-    text-align: center;
-    width: 600px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-    color: white;
-
-}
-input{
-    text-align: center;
-}
-
-.btnTurno{
-    text-align: center;
-    width: 600px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-    
-}
-
-.cards{
-    background-color: gray;
-    text-align: center;
-    width: 800px;
-    display:block;
-	margin: 0 auto 20px;
-	position: relative;
-    color: white;
-    border-radius: 20px;
-    padding: 15px;
-
-
-}

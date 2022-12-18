@@ -61,13 +61,13 @@ const   btnSiguiente = document.getElementById('btnSiguiente'),
         formDatos = document.getElementById('ingresoDatosPF'),
         monto = document.getElementById('monto'),
         dias = document.getElementById('dias'),
-        selectorCobertura = document.getElementById('tipoCobertura'),
+        selectorCobertura = document.getElementById('cobertura'),
         selectorOpciones = document.getElementById('opciones'),
         tasaParticular = 300,
         tasaObraSocial = 1500;
         checkDatos = document.getElementById('guardarDatos'),
         cardIngreso = document.querySelector('.cardIngreso'),
-        confirmacion = document.querySelector('.confirmacion'),
+        confirmacion = document.querySelector('.confirmacion');
    
 
 
@@ -78,22 +78,36 @@ function elegirCobertura(medicosDisponibles, cobertura) {
 }
 
 function verMedicos(medicosDisponibles) {
+
+    
+
     for (const medicos of medicosDisponibles) {
         let option = `<option value="${medicos.simbolo}" id="medicos${medicos.simbolo}">
-        CA ${medicos.nombre} Nº ${medicos.simbolo} - ${medicos.nombre} ${cuenta.costo}
-        </option>`
-        selectorOpciones.innerHTML += option;
+        N ${medicos.nombre} C ${medicos.simbolo} - ${cuenta.costo}
+        </option>`;
+           
+        selectorOpciones.innerHTML += opciones;
+        
     }
+        
 }
 
-let medicosDisponibles = elegirCobertura()
-window.onload = verMedicos(medicosDisponibles)
 
+let medicosDisponibles = elegirCobertura(medicosDisponiblesCentro, selectorCobertura.value);
 
 selectorCobertura.onchange = () => {
-    selectorOpciones.innerHTML = '';
-    verMedicos(elegirCobertura(medicosDisponiblesCentro, selectorCobertura.value));
+    selectorOpciones.innerHTML = 'medicosDisponiblesCentro';
+    
+    
 }
+
+
+ window.onload = verMedicos(elegirCobertura(medicosDisponiblesCentro, selectorCobertura.value));
+
+
+
+
+
 
 
 

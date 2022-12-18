@@ -16,12 +16,25 @@
 </head>
 
 <body>
-    <header>
-        <h1>Turnos</h1>
+    <header class="headerTurnero">
+        <h1>TURNOS</h1>
     </header>
     <main id="containerTurnero">
         <section class="cardIngreso visible">
             <form id="ingresoDatosT" class="formDatosT" action="">
+                <div class="input-group">
+                    <span class="input-group-text">Nombre y apellido</span>
+                    <input type="text" placeholder="Nombre" class="form-control">
+                    <input type="text" placeholder="Apellido" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Celular</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Celular">
+                </div>
                 <div class="fila1">
                     <label for="servicio">Tipo de servicio solicitado</label>
                     <input type="text" name="servicio" id="servicio" title=""
@@ -40,7 +53,6 @@
 
                     <label for="opciones">Especialista elegido</label>
                     <select name="opciones" id="opciones">
-                        
                     </select>
                 </div>
                 <div class="fila3">
@@ -60,7 +72,7 @@
 
         <section class="confirmacion oculta">
             <div>
-                <h1>Datos del turno</h1>
+                <h3>Datos del turno</h3>
                 <ul id="listaDeConfirmacion">
 
 
