@@ -39,17 +39,21 @@
                     <label for="servicio">Tipo de servicio solicitado</label>
                     <input type="text" name="servicio" id="servicio" title=""
                         placeholder="estudio / consulta" autofocus>
+                        
+                        <br>
 
                     <label for="dias">¿Qué día del mes corriente solicita el turno?</label>
                     <input type="text" name="dias" id="dias" title=""
                         placeholder="Del 1 al 25">
                 </div>
                 <div class="fila2">
+                    
                     <label for="cobertura">¿Tienes cobertura?</label>
                     <select name="cobertura" id="cobertura">
-                        <option value="particular">Particular</option>
-                        <option value="oSocial">Obra Social</option>
+                        <option value="">Particular</option>
+                        <option value="obraSocial">Obra Social</option>
                     </select>
+                    <br> 
 
                     <label for="opciones">Especialista elegido</label>
                     <select name="opciones" id="opciones">
@@ -64,22 +68,22 @@
 
                 <div class="acciones">
                     <input type="button" id="btnSiguiente" value="Siguiente">
-                    <input type="button" id="btnCancelar" value="Cancelar">
                     <input type="button" id="btnUltima" value="último turno">
+                    <button type="button" id="btnUltima" value="Volver a inicio"> <a class="btnVolver" href="/login.html" >Volver a inicio</a>
+                    </button>
+
+           
                 </div>
             </form>
         </section>
 
         <section class="confirmacion oculta">
             <div>
-                <h3>Datos del turno</h3>
+                <h3>Datos del turno solicitado</h3>
                 <ul id="listaDeConfirmacion">
-
-
-
                     
                 </ul>
-                <input type="button" id="btnVolver" value="Volver">
+                
             </div>
         </section>
         <section class="resultado">

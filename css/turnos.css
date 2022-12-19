@@ -28,6 +28,63 @@ h1{
     width: 100%;
     height: auto;
     padding: 60px;
+    text-align: center;
+
 
 }
 
+h3{
+    text-align: center;
+    color: #51A8B1;
+    margin: 10px;
+    
+   
+
+}
+
+.input-group{
+    margin: 10px;
+}
+
+.fila1{
+    margin: 10px;
+
+}
+#servicio {
+    margin: 10px;
+}
+#cobertura{
+    margin: 10px;
+}
+#opciones{
+    margin: 10px;
+}
+#guardarDatos{
+    margin: 10px;
+
+}
+
+#btnSiguiente{
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    color: #51A8B1;
+    border-color: #51A8B1;
+    border-radius: 5px;
+}   
+.btnVolver{
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    color: #51A8B1;
+    border-color: #51A8B1;
+    border-radius: 5px;
+}
+#btnUltima{
+    width: 110px;
+    height: 40px;
+    font-size: 15px;
+    color: #51A8B1;
+    border-color: #51A8B1;
+    border-radius: 5px;
+}
